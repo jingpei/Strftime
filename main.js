@@ -1,4 +1,4 @@
-$(document).on('ready', function () {
+$(document).on('ready', function() {
 // THIS IS THE TOP OF YOUR PROGRAM
 
 
@@ -10,9 +10,22 @@ $(document).on('ready', function () {
 // $('#submit').on('click', function () {
 //     /* insert your function to run when the submit button is clicked /*
 // });
-function nameOfFunction (optional, args) {
-	// insert body of function
-}
+
+$('#button').click(function() {
+	var today = new Date();
+	var mm=(today.getMonth()+1).toString();
+	var dd=(today.getDate()).toString();
+	var yyyy=(today.getFullYear()).toString();
+	var hour = (today.getHours());
+	var min =  today.getMinutes();
+	var date = (($('#date').val()).replace(/\//g,"")).toString() + ($('#hour').val()).toString() + ($('#minutes').val()).toString();
+	today = mm+dd+yyyy+hour+min;
+	function calculateTime(args){
+		console.log(date);
+		console.log(today);
+	};
+	calculateTime(date);
+});
 
 
 
